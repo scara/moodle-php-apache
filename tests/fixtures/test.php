@@ -11,7 +11,7 @@ $requiredextensions = [
     'oci8',
     'pgsql',
     'redis',
-    'solr',
+# Disabled because it's not available for php72 yet 'solr',
     'soap',
     'sqlsrv',
     'xsl',
