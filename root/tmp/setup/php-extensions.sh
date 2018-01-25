@@ -35,8 +35,9 @@ docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu/
 docker-php-ext-install -j$(nproc) ldap
 
 pecl install memcached redis apcu igbinary
-# Disable 'redis' due to MDL-60978 docker-php-ext-enable memcached redis apcu igbinary
-docker-php-ext-enable memcached apcu igbinary
+/tmp/setup/solr-extension.sh
+# Disable 'redis' due to MDL-60978 docker-php-ext-enable solr memcached redis apcu igbinary
+docker-php-ext-enable solr memcached apcu igbinary
 
 echo 'apc.enable_cli = On' >> /usr/local/etc/php/conf.d/docker-php-ext-apcu.ini
 
